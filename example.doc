@@ -1,0 +1,24 @@
+
+-Middleware: all the Middleware like cors,verifyToken,cookieparser
+
+-connectDB: connectDB funciton establish connection with mongodb 
+          : app.use(allRoutes) => import all routes folder where all the routes 
+            endpoints are implemented.
+            example: "http://localhost:5000/user" /user /task and so on
+
+-controller: this folder handle the asynchronous operation when any api gets hit. 
+            example: When user hits url 
+            - "http://localhost:5000/user" > allRoutes > controller > users > index.js
+
+            example-2: this endpoint /user was defined in all route folder but its asynchronous executive funciton body be declared in controller folder 
+            for the clean up environment. 
+
+
+
+
+Global error hadling 
+  app.all("*",{..}) 
+    :if no route matches this route will be hit 
+    : will create an error and pass it to the next 
+    : The Next funciton takes 4 parameter (err,req,res,next) and accordingly will 
+      catch it and respond the error was occured
