@@ -13,9 +13,9 @@ const getAllUsers = async (req, res,usersCollection) => {
 
 // Get signle user by id
 const getSingleUser = async (req, res,usersCollection) => {
-      // const id = req.params.id
+      const id = req.params.id
   try {
-    const user = await usersCollection.findOne({_id:new ObjectId("65a36a6931d9199a54903197")});
+    const user = await usersCollection.findOne({_id:new ObjectId(id)});
     res.send(user);
   } catch (error) {
     res.status(500).send("Internal Server Error");
